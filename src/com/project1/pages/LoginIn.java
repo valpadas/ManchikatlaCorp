@@ -13,7 +13,6 @@ public class LoginIn {
 		this.driver = driver;
 	}
 
-	//@FindBy(xpath = "//*[@id='fromPlaceName']")
 	@FindBy(id = "fromPlaceName")
 	WebElement FromLocation;
 
@@ -41,8 +40,8 @@ public class LoginIn {
 			ele1.build().perform();
 			ele1.sendKeys(Keys.ENTER).build().perform();
 			Depart.click();
-			 date.click();
-			 Button.click();
+			date.click();
+			Button.click();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
