@@ -13,11 +13,12 @@ public class LoginTestIn {
 		System.setProperty("webdriver.chrome.driver","D:\\sw\\softwares\\chromedriver.exe");
 		WebDriver driver;
 		driver=new ChromeDriver();
-		driver.get("https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_login_form_modal");
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		driver.get("http://tsrtconline.in/oprs-web/");
+		//driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		Thread.sleep(2000);
 		LoginIn initElements = PageFactory.initElements(driver,LoginIn.class);
-		initElements.validLogin("Bangaram","anusha");
+		initElements.validateLogin();
+		
 		
 	}
 
