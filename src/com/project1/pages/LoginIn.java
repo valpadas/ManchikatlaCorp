@@ -22,12 +22,12 @@ public class LoginIn {
 	@FindBy(xpath = "//*[@id='txtJourneyDate']")
 	WebElement Depart;
 
-	@FindBy(xpath = "//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[2]/td[6]/a")
+	@FindBy(xpath = "//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[3]/td[1]/a")
 	WebElement date;
 
 	@FindBy(xpath = "//*[@id='searchBtn']")
 	WebElement Button;
-
+	
 	public void validateLogin() {
 		try {
 			Actions a = new Actions(driver);
