@@ -1,0 +1,21 @@
+package SampleJava;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ReadDataFromExcel {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		System.setProperty("webdriver.chrome.driver","D:\\sw\\softwares\\chromedriver.exe");
+		WebDriver d;
+		d= new ChromeDriver();
+		FileInputStream file=new FileInputStream("C:\\Users\\admin\\Desktop\\venu.xls.xlsx");
+		
+
+
+	}
+
+}

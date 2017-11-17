@@ -1,0 +1,10 @@
+package com.parkingcalculators.test;
+
+
+
+public class Case1STP extends junit.framework.TestCase {
+	private webdriver = driver;
+	private String = baseurl;
+	
+
+}

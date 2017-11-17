@@ -1,0 +1,32 @@
+package com.project1.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class ParkingCaliculatorPage {
+	public WebDriver driver;
+	//creating constructor
+	public ParkingCaliculatorPage(WebDriver driver){
+		this.driver=driver;
+		
+	} 
+	@FindBy(linkText="Parking Calculator")
+	WebElement title;
+	
+	@FindBy(xpath="/html/body/form/table")
+	WebElement table;
+
+	@FindBy(linkText="Choose a Lot ")
+	WebElement chooseALot;
+	
+	@FindBy(xpath="//*[@id='Lot']")
+	WebElement chooseALot_dropdown;
+	
+	@FindBy(linkText="Choose Entry Date and Time ")
+	WebElement dateAndTime;
+	
+	@FindBy(xpath="//*[@id='EntryTime']")
+	
+
+}

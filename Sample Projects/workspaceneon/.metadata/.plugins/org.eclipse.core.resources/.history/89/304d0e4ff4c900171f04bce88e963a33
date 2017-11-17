@@ -1,0 +1,84 @@
+package com.project1.parkingcalculator;
+
+import static org.junit.Assert.*;
+
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Case2WindowHandling {
+	private WebDriver driver;
+	private StringBuffer verificationErrors = new StringBuffer();
+
+	@Before
+	public void setUp() throws Exception {
+		System.setProperty("webdriver.chrome.driver", "D:\\sw\\softwares\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("http://adam.goucher.ca/parkcalc/index.php");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+		Select select = new Select(driver.findElement(By.id("Lot")));
+		select.selectByVisibleText("Long-Term Surface Parking");
+		driver.findElement(By.id("EntryTime")).clear();
+		driver.findElement(By.id("EntryTime")).sendKeys("10:00");
+		driver.findElement(By.xpath("//img[@alt='Pick a date']")).click();
+		// to handle parent window
+		String parentwindow = driver.getWindowHandle();
+		// to handle all open windows
+		Set<String> allwindows = driver.getWindowHandles();
+		for (String window : allwindows) {
+			driver.switchTo().window(window);
+
+		}
+		// selecting entry date and month
+		Select select1 = new Select(driver.findElement(By.name("MonthSelector")));
+		select1.selectByVisibleText("January");
+		driver.findElement(By.linkText("2")).click();
+		driver.switchTo().window(parentwindow);
+		
+		// for exit process select time and date
+		driver.findElement(By.id("ExitTime")).clear();
+		driver.findElement(By.id("ExitTime")).sendKeys("11:00");
+		driver.findElement(By.xpath("/html/body/form/table/tbody/tr[3]/td[2]/font/a/img")).click();
+		String parentwindow2 = driver.getWindowHandle();
+		Set<String> allwindows2 = driver.getWindowHandles();
+		for (String windows : allwindows2) {
+			driver.switchTo().window(windows);
+			Select select2 = new Select(driver.findElement(By.name("MonthSelector")));
+			select2.selectByVisibleText("February");
+			driver.findElement(By.linkText("2")).click();
+			driver.switchTo().window(parentwindow2);
+			driver.findElement(By.name("Submit")).click();
+			//confirm correct cost for Lsp
+			try{
+				assertEquals("$ 272.00", driver.findElement(By.xpath("/html/body/form/table/tbody/tr[4]/td[2]/span[1]/font/b")).getText());
+			}catch(Error e){
+				verificationErrors.append("LSP for one hour yields incorrect cost");
+				verificationErrors.append(e.toString());
+				//confirm correct duration 
+				try{
+					String actual = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[4]/td[2]/span[2]/font/b")).getText(); 
+					assertEquals("(31 Days, 1 Hours, 0 Minutes)",);
+				}
+			}
+			
+
+		}
+		
+	}
+
+}

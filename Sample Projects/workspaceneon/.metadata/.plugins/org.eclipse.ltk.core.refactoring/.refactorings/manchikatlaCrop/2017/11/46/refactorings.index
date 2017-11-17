@@ -1,0 +1,10 @@
+1510650890701	Extract local variable 'elementPresent'
+1510651291530	Extract local variable 'findElement'
+1510651390714	Extract local variable 'findElements'
+1510735324039	Delete element
+1510739187251	Extract local variable 'string'
+1510740481930	Extract local variable 'windowHandle'
+1510740742027	Extract local variable 'windowHandles'
+1510743711803	Extract local variable 'string'
+1510744685240	Delete element
+1510745437601	Delete element

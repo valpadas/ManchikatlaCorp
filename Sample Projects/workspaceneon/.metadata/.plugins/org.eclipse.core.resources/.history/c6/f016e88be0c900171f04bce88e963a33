@@ -1,0 +1,5 @@
+
+
+public class Case1STP extends junit.framework.TestCase {
+
+}

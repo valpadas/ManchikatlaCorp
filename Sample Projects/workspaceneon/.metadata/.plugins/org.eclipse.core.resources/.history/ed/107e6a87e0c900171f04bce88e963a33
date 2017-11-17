@@ -1,0 +1,5 @@
+package com.parkingcalculators.test;
+
+public class Case1STP extends junit.framework.TestCase {
+
+}

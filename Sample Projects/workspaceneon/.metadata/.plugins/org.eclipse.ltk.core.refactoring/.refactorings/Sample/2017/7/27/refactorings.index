@@ -1,0 +1,20 @@
+1499347654808	Delete element
+1499348850041	Extract local variable 'findElement'
+1499349387156	Extract local variable 'findElements'
+1499349888572	Extract local variable 'tagName'
+1499350161594	Extract local variable 'size'
+1499350462303	Extract local variable 'location'
+1499350742584	Extract local variable 'findElement2'
+1499439206697	Delete element
+1499439212685	Delete element
+1499439218725	Delete element
+1499439420013	Delete element
+1499439425823	Delete element
+1499439474002	Delete element
+1499439479786	Delete element
+1499439721265	Delete element
+1499439727136	Delete element
+1499439808047	Delete element
+1499515641842	Extract local variable 'actions'
+1499518751437	Extract local variable 'findElement'
+1499519806493	Extract local variable 'text'

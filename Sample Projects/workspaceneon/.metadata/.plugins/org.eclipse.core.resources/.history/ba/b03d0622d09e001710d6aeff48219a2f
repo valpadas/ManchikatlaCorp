@@ -1,0 +1,24 @@
+package com.eauction.tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.eauction.pages.Gmail_New;
+import com.eauction.utils.BrowserFactory;
+
+public class Gmail_T1 {
+	WebDriver driver;
+	
+	@Test
+	public void chekLogin()throws Exception{
+		
+		BrowserFactory fact=PageFactory.initElements(driver,BrowserFactory.class);
+		fact.startBrowser("chrome","http://www.gmail.com");
+		//WebDriver startBrowser = BrowserFactory.startBrowser("chrome","http://www.gmail.com");
+		Gmail_New gmail = PageFactory.initElements(driver,Gmail_New.class);
+		gmail.gmailLogin("valpadasanusha","venuanu123");
+		
+	}
+
+}

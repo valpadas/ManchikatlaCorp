@@ -1,0 +1,36 @@
+package com.project1.tests;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import com.project1.pages.Page;
+
+
+
+public class ParkingCalTest {
+	public static WebDriver driver;
+	public static void main(String[] args){
+		System.setProperty("webdriver.chrome.driver","D:\\sw\\softwares\\chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.get("http://adam.goucher.ca/parkcalc/");
+		Page page=new Page();
+		boolean elementPresent = page.isElementPresent(driver,By.xpath("/html/body/p"));
+		if(elementPresent==true){
+			WebElement findElement = driver.findElement(By.xpath("//*[@id='Lot']"));
+			List<WebElement> findElements = findElement.findElements(By.tagName("option"));
+			for (WebElement webElement : findElements) {
+				webElement.click();
+				
+			}
+				
+			}
+		}
+		
+		//driver.findElement(By.xpath("/html/body/p")).getText();	
+	}
+
+}

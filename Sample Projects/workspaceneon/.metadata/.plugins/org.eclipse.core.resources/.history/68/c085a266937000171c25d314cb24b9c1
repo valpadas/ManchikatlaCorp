@@ -1,0 +1,73 @@
+package com.eauction.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class HomePage extends Page{
+	public WebDriver driver;
+
+	// Define the Constructor and pass the WebDriver instance to it
+	public HomePage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
+	@FindBy(className = "glyphicon glyphicon-home")
+	public WebElement home_Link;
+
+	@FindBy(xpath = "//div[@id='bs-example-navbar-collapse-1']/ul/li[2]/a")
+	public WebElement sellanitem_Link;
+
+	@FindBy(xpath = "//div[@id='bs-example-navbar-collapse-1']/ul/li[3]/a")
+	public WebElement registernow_Link;
+
+	@FindBy(linkText = "Login")
+	public WebElement login_Link;
+
+	@FindBy(xpath = "//div[@id='bs-example-navbar-collapse-1']/ul/li[4]/a")
+	public WebElement logout_Link;
+
+	@FindBy(linkText = "Help")
+	public WebElement help_Link;
+
+	@FindBy(linkText = "Advanced Search")
+	public WebElement advanceSearch_Link;
+
+	// check if the login is already happened or not
+	public boolean checkIfLogin() {
+		try {
+			if (logout_Link.getText().equalsIgnoreCase("Login"))
+				return false;
+			else
+				return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	
+	public LoginPage clickOnLogin(){
+		try {
+			login_Link.click();			
+		}
+		catch (Exception e){
+			APPLICATION_LOGS.error("Error", e);
+		}
+		return PageFactory.initElements(driver, LoginPage.class);
+	}
+	
+	public HelpPage clickOnHelp(){
+		try {
+			help_Link.click();			
+		}
+		catch (Exception e){
+			APPLICATION_LOGS.error("Error", e);
+		}
+		return PageFactory.initElements(driver, HelpPage.class);
+	}
+	
+	public static void display(){ 
+		System.out.println("dddddddddddddddddd");
+	}
+	
+}

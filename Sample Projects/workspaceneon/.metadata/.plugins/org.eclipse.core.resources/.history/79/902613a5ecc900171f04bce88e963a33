@@ -1,0 +1,37 @@
+package com.project1.parkingcalculator;
+
+import static org.junit.Assert.*;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Case2WindowHandling {
+	private WebDriver driver;
+	private StringBuffer verificationErrors = new StringBuffer();
+
+	@Before
+	public void setUp() throws Exception {
+		System.setProperty("webdriver.chrome.driver", "D:\\sw\\softwares\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("http://adam.goucher.ca/parkcalc/index.php");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+	}
+
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void test() {
+	Select select = new Select(driver.findElement(By.id("Lot"));
+	select.selectByVisibleText("Long-Term Surface Parking");
+	}
+
+}

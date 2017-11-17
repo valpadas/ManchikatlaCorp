@@ -1,0 +1,13 @@
+package com.project1.tests;
+
+import org.openqa.selenium.WebDriver;
+
+public class ParkingCalTest {
+	public WebDriver driver;
+	public static void main(String[] args){
+		System.setProperty("webdriver.chrome.driver","D:\\sw\\softwares\\chromedriver.exe");
+		driver=new chromedriver();
+		
+	}
+
+}

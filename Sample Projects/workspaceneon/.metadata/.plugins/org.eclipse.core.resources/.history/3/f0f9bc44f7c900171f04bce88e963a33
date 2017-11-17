@@ -1,0 +1,14 @@
+package com.project1.parkingcalculator;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+
+@RunWith(Suite.class)
+@SuiteClasses({})
+public class ParkinkingCalSuite {
+	public static Test suite(){
+		return suite;}
+
+}

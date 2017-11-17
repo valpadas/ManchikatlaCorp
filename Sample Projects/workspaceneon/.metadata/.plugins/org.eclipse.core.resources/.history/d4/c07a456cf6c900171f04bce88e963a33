@@ -1,0 +1,73 @@
+package com.project1.parkingcalculator;
+
+import static org.junit.Assert.*;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class Case1STP  {
+	private WebDriver driver;
+	private String baseurl;
+	private StringBuffer verificationErrors = new StringBuffer();
+
+	// opening browser
+	@Before
+	public void setup() {
+		System.setProperty("webdriver.chrome.driver", "D:\\sw\\softwares\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("http://adam.goucher.ca/parkcalc/index.php");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+	}
+
+	@Test
+	public void case1STPOneHour() {
+		Select select = new Select(driver.findElement(By.id("Lot")));
+		select.selectByVisibleText("Short-Term Parking");
+		driver.findElement(By.id("EntryTime")).clear();
+		driver.findElement(By.id("EntryTime")).sendKeys("11:00");
+		driver.findElement(By.id("EntryDate")).clear();
+		driver.findElement(By.id("EntryDate")).sendKeys("01/01/2014");
+		driver.findElement(By.id("ExitTime")).clear();
+		driver.findElement(By.id("ExitTime")).sendKeys("11:30");
+		driver.findElement(By.id("ExitDate")).clear();
+		driver.findElement(By.id("ExitDate")).sendKeys("01/01/2014");
+		driver.findElement(By.name("Submit")).click();
+		// confirm corrct cost for 30min STP
+		try {
+			String expected = "$ 2.00";
+			String actual = driver.findElement(By.xpath("/html/body/form/table/tbody/tr[4]/td[2]/span[1]/font/b"))
+					.getText();
+			assertEquals(expected, actual);
+		} catch (Error e) {
+			verificationErrors.append("STP 30min yields incorrect cost");
+			verificationErrors.append(e.toString());
+
+		}
+		//confirm correct time of duration for 30min STP
+		try{
+			assertEquals(" (0 Days, 0 Hours, 30 Minutes)", driver.findElement(By.cssSelector("span.BodyCopy > font:nth-child(1) > b:nth-child(1)")).getText().trim());
+		}catch (Error e){
+			verificationErrors.append("STP 30min yield incorrect duration");
+			verificationErrors.append(e.toString());
+		}
+	}
+
+	@After
+	public void tearDown() {
+		driver.quit();
+		String stringErrors = verificationErrors.toString();
+		if(!"".equals(verificationErrors)){
+			fail(stringErrors);
+		}
+
+	}
+
+}

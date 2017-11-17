@@ -1,0 +1,22 @@
+1504414380305	Copy compilation unit
+1504414858534	Copy compilation unit
+1504415065344	Copy compilation unit
+1504417309566	Copy compilation unit
+1504427525185	Copy compilation unit
+1504442115258	Rename package 'InstanceVariable'
+1504539733662	Extract local variable 'size'
+1504541587750	Extract local variable 'asList'
+1504541664323	Extract local variable 'addAll'
+1504542094544	Extract local variable 'remove'
+1504542226012	Extract local variable 'containsAll'
+1504580404477	Extract local variable 'contains'
+1504580495811	Extract local variable 'indexOf'
+1504580692780	Extract local variable 'size'
+1504581109701	Extract local variable 'indexOf2'
+1504581187336	Extract local variable 'set'
+1504581385334	Extract local variable 'indexOf3'
+1504581547675	Extract local variable 'indexOf4'
+1504581823282	Extract local variable 'indexOf5'
+1504597062708	Extract local variable 'string'
+1504597133797	Extract local variable 'keySet'
+1504597202947	Extract local variable 'entrySet'

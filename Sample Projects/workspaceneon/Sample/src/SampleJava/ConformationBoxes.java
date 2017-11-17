@@ -1,0 +1,29 @@
+package SampleJava;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ConformationBoxes {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "D:\\sw\\softwares\\chromedriver.exe");
+		ChromeDriver a=new ChromeDriver();
+		a.manage().window().maximize();
+		a.get("http://softwaretesting-guru.blogspot.in/p/blog-page.html");
+		Thread.sleep(3000);
+		a.findElement(By.xpath("//input[@value='Display a confirm box']")).click();
+		Thread.sleep(2000);
+		Alert s=a.switchTo().alert();
+		String actualtext=s.getText();
+		String exptext="Press a button";
+		if(actualtext.equals(exptext)){
+			s.dismiss();
+		}
+		else{
+			s.accept();
+		}
+
+	}
+
+}

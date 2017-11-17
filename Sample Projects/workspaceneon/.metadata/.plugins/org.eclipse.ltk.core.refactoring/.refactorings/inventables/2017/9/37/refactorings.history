@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;keySet&apos; from expression &apos;map.keySet()&apos;&#x0D;&#x0A;- Original project: &apos;inventables&apos;&#x0D;&#x0A;- Variable name: &apos;keySet&apos;&#x0D;&#x0A;- Destination method: &apos;com.inventables.pages.LoginPage.validLogin()&apos;&#x0D;&#x0A;- Variable expression: &apos;map.keySet()&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;keySet&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;com.inventables.pages{LoginPage.java" name="keySet" replace="true" selection="993 13" stamp="1505046106253" version="1.0"/>
+</session>

@@ -1,0 +1,35 @@
+package com.project1.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class LoginIn {
+	public WebDriver driver;
+	
+	public LoginIn(WebDriver driver){
+		this.driver=driver;
+	}	
+	@FindBy(xpath="/html/body/button")
+	WebElement LoginButton;
+	
+	@FindBy(xpath="//input[@name='uname']")
+	WebElement username;
+	
+	@FindBy(xpath="//input[@name='psw']")
+	WebElement password;
+	
+	@FindBy(xpath="/html/body/div[1]/form/div[2]/button")
+	WebElement Login2;
+	
+	public void validLogin(String uname,String password){
+		 LoginButton.click();
+		 username.sendKeys(uname);
+		 this.password.sendKeys(password);
+		 Login2.click();
+		 
+		
+	}
+	
+}
+

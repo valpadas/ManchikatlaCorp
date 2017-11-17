@@ -1,0 +1,6 @@
+.absolutepath=true
+Sample.outdir=/test-output
+SamplexmlTemplateFile=testng.xml
+eclipse.preferences.version=1
+inventables.outdir=/test-output
+xmlTemplateFile=${workspace_loc\:Sample/src/bangaram.xml}

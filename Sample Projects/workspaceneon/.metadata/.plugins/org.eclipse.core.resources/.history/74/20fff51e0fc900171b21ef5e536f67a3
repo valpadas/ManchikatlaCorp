@@ -1,0 +1,50 @@
+package com.project1.pages;
+
+import java.io.File;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import jxl.common.Logger;
+
+public class Page {
+	Logger APPLICATION_LOGES = Logger.getLogger(Page.class);
+
+	public boolean isElementPresent(WebDriver driver, By locator) {
+		try {
+			driver.findElement(locator);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+
+	public boolean clickonElemene(WebDriver driver, By locator) {
+		try {
+			driver.findElement(locator);
+			return false;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return false;
+		}
+
+	}
+
+	public void takeSceenhot(String fileName) {
+		WebDriver driver;
+		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		try{
+			FileUtils.copyFile(srcFile,new File(System.getProperty("user.dir")+"\\screenshot" +fileName+ ".png"));
+		}
+		catch(Exception e){
+			APPLICATION_LOGES.error("Failed to create screenshot with following exception"+e);
+		}
+
+	}
+}

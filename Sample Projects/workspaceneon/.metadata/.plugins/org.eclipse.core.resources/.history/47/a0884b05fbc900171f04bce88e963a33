@@ -1,0 +1,30 @@
+package com.project1.parkingcalculator;
+
+import org.junit.Test;
+import org.junit.runner.JUnitCore;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
+
+import junit.framework.TestSuite;
+
+
+
+public class ParkinkingCalSuite {
+	public static TestSuite suite(){
+		 TestSuite suite = new TestSuite();
+		 suite.addTestSuite(Case1STP.class);
+		 suite.addTestSuite(Case2WindowHandling.class);
+		 
+		
+		return suite;
+		}
+	public static void main(String[] args){
+		 junit.textui.TestRunner.run(suite());
+		 JUnitCore.main(
+		            "com.project1.parkingcalculator"); 
+		
+		
+	}
+
+}

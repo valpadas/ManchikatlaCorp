@@ -1,0 +1,10 @@
+1506073875057	Extract local variable 'lastRowNum'
+1506074017267	Extract local variable 'stringCellValue'
+1506074990390	Extract local variable 'leftCol'
+1506075722285	Extract local variable 'sheet'
+1506075741775	Extract local variable 'rows'
+1506075773147	Extract local variable 'columns'
+1506075864731	Extract local variable 'contents'
+1506078005839	Delete element
+1506078743004	Delete element
+1506079130509	Extract local variable 'initElements'

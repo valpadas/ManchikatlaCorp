@@ -1,0 +1,8 @@
+1499601638081	Extract local variable 'text2'
+1499778794385	Delete element
+1499783783177	Extract local variable 'fileInputStream'
+1499783852817	Extract local variable 'workbook'
+1499784029994	Extract local variable 'sheet'
+1499784420304	Extract local variable 'rows'
+1499784520371	Extract local variable 'columns'
+1499785574899	Extract local variable 'contents'

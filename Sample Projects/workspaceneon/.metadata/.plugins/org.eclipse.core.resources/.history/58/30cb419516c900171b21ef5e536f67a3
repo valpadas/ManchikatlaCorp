@@ -1,0 +1,25 @@
+package com.project1.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class ParkingCaliculatorPage {
+	public WebDriver driver;
+	//creating constructor
+	public ParkingCaliculatorPage(WebDriver driver){
+		this.driver=driver;
+		
+	} 
+	@FindBy(linkText="Parking Calculator")
+	WebElement title;
+	
+	@FindBy(xpath="/html/body/form/table")
+	WebElement table;
+
+	@FindBy(xpath="//td[@class='BodyCopy']")
+	WebElement table;
+	
+	
+
+}

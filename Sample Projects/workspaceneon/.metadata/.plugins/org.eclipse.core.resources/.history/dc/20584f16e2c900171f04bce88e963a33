@@ -1,0 +1,24 @@
+package com.project1.parkingcalculator;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Before;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Case1STP extends junit.framework.TestCase{
+	private WebDriver driver;
+	private String baseurl;
+	private StringBuffer verificationErrors = new StringBuffer();
+	
+	@Before
+	public void setup(){
+		System.setProperty("webdriver.chrome.driver","D:\\sw\\softwares\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("http://adam.goucher.ca/parkcalc/index.php");
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		
+		
+	}
+
+}

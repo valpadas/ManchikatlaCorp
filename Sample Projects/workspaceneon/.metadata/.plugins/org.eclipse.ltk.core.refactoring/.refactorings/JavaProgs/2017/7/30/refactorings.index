@@ -1,0 +1,10 @@
+1501156439841	Delete element
+1501156759658	Extract local variable 'returnType'
+1501160771278	Delete element
+1501161096245	Extract local variable 'max'
+1501174293856	Extract local variable 'regCharges'
+1501175525799	Extract local variable 'calculateTotal'
+1501254901139	Extract local variable 'calculateSalary'
+1501256275395	Extract local variable 'i'
+1501257286090	Extract local variable 'object'
+1501257326962	Extract local variable 'object2'
